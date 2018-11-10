@@ -20,12 +20,8 @@ func TestMemberServiceTypeSuite(t *testing.T) {
 func (ts *MemberServiceTestSuite) TestGetMembers_ExpectCorrectMembersReturn() {
 	mockRequester := NewMockRequester()
 	mockRequester.On("Get", "http://member-service/api/members").Return(`[
-		{
-			"name": "Chaiyapong"
-		},
-		{
-			"name": "Apaichon"
-		}
+		{"name": "Chaiyapong"},
+		{"name": "Apaichon"}
 	]`, nil)
 
 	memberSvc := NewMemberService()
